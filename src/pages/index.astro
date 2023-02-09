@@ -1,81 +1,78 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Writter from "../components/Writter.astro";
+import ContactMe from "../components/ContactMe.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
+<Layout title="David Pacheco: Programador web">
+	<div id="intro-hero" class="p-5 text-center bg-image">
+		<div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+			<div class="d-flex justify-content-center align-items-center h-100">
+				<div class="text-white">
+					<h1 class="mb-3">Hola, mi nombre es David Pacheco</h1>
+					<Writter />
+					<a
+						class="btn btn-outline-light btn-lg m-2"
+						href="https://www.youtube.com/watch?v=c9B4TPnak1A"
+						role="button"
+						rel="nofollow"
+						target="_blank">Sobre mí</a
+					>
+					<a
+						class="btn btn-outline-light btn-lg m-2"
+						href="https://mdbootstrap.com/docs/standard/"
+						target="_blank"
+						role="button">Contacto</a
+					>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row mt-4 about">
+		<div class="col-sm-12 col-md-4 col-lg-4">
+			<img
+				src="/assets/pexels-czapp-arpad-7498603.jpg"
+				class="img-fluid rounded mx-auto d-block"
+				alt="Programando"
 			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+		</div>
+		<div class="col-sm-12 col-md-8 col-lg-8">
+			<p class="mt-5">
+				Soy Programador web Full Stack con 3 años de experiencia con
+				PHP, Python y JavaScript. En el equipo en donde estoy, colaboro
+				en proyectos web desarrollando nuevas funciones y dando
+				mantenimiento a los mismos. Estoy aplicando e incrementando mis
+				habilidades de programación en lenguajes y herramientas para el
+				desarrollo.
+			</p>
+			<p>
+				Me entusiasma aplicar e incrementar mis habilidades tanto
+				lenguajes como en herramientas y que estas sean de ayuda. Me
+				gusta compartir y retroalimentar en los diferentes proyectos que
+				he colaborado.
+			</p>
+		</div>
+	</div>
+
+	<ContactMe />
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
+	/* Default height for small devices */
+	#intro-hero {
+		height: 400px;
+		background-image: url("/assets/working-on-code.jpg");
 	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
+
+	/* Height for devices larger than 992px */
+	@media (min-width: 992px) {
+		#intro-hero {
+			height: 600px;
+		}
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+
+	.about img {
+		max-height: 500px;
 	}
 </style>
