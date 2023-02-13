@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	xp: CollectionEntry<'experience'>;
+}
+
+const { data, slug } = Astro.props.xp;
+
+const { xp } = Astro.props;
+const { Content } = await xp.render();
+---
+
+<div class="col-12">
+	<h2>{data.role}</h2>
+	<span class="badge bg-secondary">{data.lapse}</span>
+	<p class="fst-italic">{data.company}</p>
+	<Content />
+</div>

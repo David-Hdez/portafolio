@@ -1,0 +1,22 @@
+---
+export interface Props {
+    logo: string;
+    description: string;
+    legend: string;
+}
+
+const { logo, description, legend } = Astro.props;
+---
+
+<div class="col-sm-12 col-md-3 col-lg-3 mt-3">
+    <div class="d-flex justify-content-center">
+        <figure class="figure">
+            <img
+                src={logo}
+                class="figure-img img-fluid rounded shadow-3 mb-3"
+                alt={description}
+            />
+            <figcaption class="figure-caption">{legend}</figcaption>
+        </figure>
+    </div>
+</div>
