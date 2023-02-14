@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="David Pacheco: Contactame">
+	<div class="container">
+		<form
+			name="contact"
+			method="POST"
+			data-netlify="true"
+			data-netlify-recaptcha="true"
+		>
+			<div class="row mt-4">
+				<div class="col">
+					<input
+						type="text"
+						name="name"
+						class="form-control"
+						placeholder="Nombre"
+						aria-label="Nombre"
+					/>
+				</div>
+				<div class="col">
+					<input
+						type="email"
+						name="email"
+						class="form-control"
+						placeholder="Email"
+						aria-label="Email"
+					/>
+				</div>
+			</div>
+			<div class="row mt-1">
+				<div class="col">
+					<label for="message" class="form-label">Mensaje</label>
+					<textarea
+						class="form-control"
+						id="message"
+						name="message"
+						rows="3"></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div data-netlify-recaptcha="true"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 mt-3">
+					<button type="submit" class="btn btn-primary">Enviar</button
+					>
+				</div>
+			</div>
+		</form>
+	</div>
+</Layout>
