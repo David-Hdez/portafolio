@@ -7,8 +7,9 @@ import { getCollection } from "astro:content";
 
 // Get all entries from a collection. Requires the name of the collection as an argument.
 const allExperience = await getCollection("experience");
-
 allExperience.sort((a, b) => b.data.order.valueOf() - a.data.order.valueOf());
+
+const allProjects = await Astro.glob("./proyectos/*.md");
 ---
 
 <Layout title="David Pacheco: Habilidades y experiencia">
@@ -88,9 +89,33 @@ allExperience.sort((a, b) => b.data.order.valueOf() - a.data.order.valueOf());
 			</div>
 		</div>
 		<div class="row">
+			{allExperience.map((xp) => <ExpDetail xp={xp} />)}
+		</div>
+
+		<div class="row mt-5">
+			<div class="col-12 text-center">
+				<h1>Proyectos</h1>
+				<h5>
+					Proyectos personales implementando tecnologías con las que
+					he interactuado
+				</h5>
+			</div>
+		</div>
+		<div class="row mt-2">
 			{
-				allExperience.map((xp) => (
-					<ExpDetail xp={xp} />
+				allProjects.map((project) => (
+					<div class="col-sm-12 col-md-4 col-lg-4">
+						<div class="card text-center">
+							<div class="card-body">
+								<h5 class="card-title">
+									{project.frontmatter.name}
+								</h5>
+								<a href={project.url} class="btn btn-primary">
+									Ver más
+								</a>
+							</div>
+						</div>
+					</div>
 				))
 			}
 		</div>
