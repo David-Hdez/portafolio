@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import { SEO } from "astro-seo";
 
 export interface Props {
 	title: string;
@@ -19,8 +20,17 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<meta name="generator" content={Astro.generator} />
-		<meta property="og:title" content="David Pacheco: mi perfil profesional" />
-		<meta property="og:image" content="/assets/working-on-code.jpg" />
+
+		<SEO
+			openGraph={{
+				basic: {
+					title: "David Pacheco: mi perfil profesional",
+					type: "website",
+					image: "https://davidpacheco.netlify.app/assets/working-on-code.jpg",
+				},
+			}}
+		/>
+
 		<title>{title}</title>
 		<!-- Font Awesome -->
 		<link
