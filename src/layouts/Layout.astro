@@ -22,12 +22,17 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 
 		<SEO
+			canonical="https://davidpacheco.netlify.app"
 			openGraph={{
 				basic: {
 					title: "David Pacheco: mi perfil profesional",
 					type: "website",
 					image: "https://davidpacheco.netlify.app/assets/working-on-code.jpg",
+					url: 'https://davidpacheco.netlify.app'
 				},
+				image: {
+					alt: 'Working on code'
+				}
 			}}
 		/>
 
