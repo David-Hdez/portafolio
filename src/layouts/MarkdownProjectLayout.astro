@@ -5,114 +5,73 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title="David Pacheco: Proyecto">
-    <div class="container">
-        <div class="row mt-4">
-            <div class="col-sm-12 col-md-8 col-ls-8">
-                <!-- Carousel wrapper -->
-                <div
-                    id="project"
-                    class="carousel slide carousel-fade"
-                    data-mdb-ride="carousel"
-                >
-                    <!-- Indicators -->
-                    <div class="carousel-indicators">
-                        {
-                            frontmatter.carousel.map((project, index) => (
-                                <>
-                                    {index == 0 ? (
-                                        <button
-                                            type="button"
-                                            data-mdb-target="#project"
-                                            class:list={[
-                                                { active: index == 0 },
-                                            ]}
-                                            data-mdb-slide-to={index}
-                                            aria-current="true"
-                                            aria-label={project.description}
-                                        />
-                                    ) : (
-                                        <button
-                                            type="button"
-                                            data-mdb-target="#project"
-                                            class:list={[
-                                                { active: index == 0 },
-                                            ]}
-                                            data-mdb-slide-to={index}
-                                            aria-label={project.description}
-                                        />
-                                    )}
-                                </>
-                            ))
-                        }
-                    </div>
-
-                    <!-- Inner -->
-                    <div class="carousel-inner">
-                        {
-                            frontmatter.carousel.map((project, index) => (
-                                <>
-                                    <div
-                                        class:list={[
-                                            "carousel-item",
-                                            { active: index == 0 },
-                                        ]}
-                                    >
-                                        <img
-                                            src={`/assets/projects/${project.img}`}
-                                            class="d-block w-100"
-                                            alt={project.description}
-                                        />
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <h5>{project.description}</h5>
-                                        </div>
+    <div class="row mt-5">
+        <div class="col-sm-12 col-md-8 col-ls-8">
+            <div
+                id="carouselExampleControls"
+                class="carousel slide"
+                data-bs-ride="carousel"
+            >
+                <div class="carousel-inner">
+                    {
+                        frontmatter.carousel.map((project, index) => (
+                            <>
+                                <div
+                                    class:list={[
+                                        "carousel-item",
+                                        { active: index == 0 },
+                                    ]}
+                                >
+                                    <img
+                                        src={`/assets/projects/${project.img}`}
+                                        class="d-block w-100"
+                                        alt={project.description}
+                                    />
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>{project.description}</h5>
                                     </div>
-                                </>
+                                </div>
+                            </>
+                        ))
+                    }
+                </div>
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev"
+                >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next"
+                >
+                    <span class="carousel-control-next-icon" aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-ls-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{frontmatter.name}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        {
+                            frontmatter.techStack.map((ts) => (
+                                <span class="badge rounded-pill text-bg-secondary">
+                                    {ts}
+                                </span>
                             ))
                         }
-                    </div>
-                    <!-- Inner -->
-
-                    <!-- Controls -->
-                    <button
-                        class="carousel-control-prev"
-                        type="button"
-                        data-mdb-target="#project"
-                        data-mdb-slide="prev"
-                    >
-                        <span
-                            class="carousel-control-prev-icon"
-                            aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button
-                        class="carousel-control-next"
-                        type="button"
-                        data-mdb-target="#project"
-                        data-mdb-slide="next"
-                    >
-                        <span
-                            class="carousel-control-next-icon"
-                            aria-hidden="true"></span>
-                        <span class="visually-hidden">Siguiente</span>
-                    </button>
-                </div>
-                <!-- Carousel wrapper -->
-            </div>
-            <div class="col-sm-12 col-md-4 col-ls-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{frontmatter.name}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">
-                            {
-                                frontmatter.techStack.map((ts) => (
-                                    <span class="badge rounded-pill text-bg-secondary">
-                                        {ts}
-                                    </span>
-                                ))
-                            }
-                        </h6>
-                        <slot />
-                    </div>
+                    </h6>
+                    <slot />
                 </div>
             </div>
         </div>
