@@ -1,75 +1,59 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Writter from "../components/Writter.astro";
-import ContactMe from "../components/ContactMe.astro";
 ---
 
-<Layout title="David Pacheco: Programador web full stack">
-	<div id="intro-hero" class="p-5 text-center bg-image">
-		<div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
-			<div class="d-flex justify-content-center align-items-center h-100">
-				<div class="text-white">
-					<h1 class="mb-3">Hola, mi nombre es David Pacheco</h1>
-					<Writter />
-					<a
-						class="btn btn-outline-light btn-lg m-2"
-						href="/sobre-mi"
-						role="button">Sobre mí</a
-					>
-					<a
-						class="btn btn-outline-light btn-lg m-2"
-						href="/contactame"
-						role="button">Contacto</a
-					>
-				</div>
-			</div>
+<Layout title="David Pacheco: Programador web full stack">	
+	<div class="row mt-5">
+		<div class="col">
+			<h1 class="mb-3">Hola, mi nombre es David Pacheco</h1>
 		</div>
 	</div>
 
-	<div class="row mt-4 about">
+	<div class="row">
+		<div class="col">
+			<Writter />
+		</div>
+	</div>
+
+	<div class="row mt-3">
+		<div class="col">
+			<a
+				class="btn btn-outline-primary"
+				href="/sobre-mi/habilidades"
+				role="button">Sobre mí</a
+			>
+			<a
+				class="btn btn-outline-primary"
+				href="/contactame"
+				role="button">Contacto</a
+			>
+		</div>
+	</div>
+	
+	<div class="row mt-5">
 		<div class="col-sm-12 col-md-4 col-lg-4">
 			<img
-				src="/assets/pexels-czapp-arpad-7498603.jpg"
+				src="/assets/pexels-lukas-574071.jpg"
 				class="img-fluid rounded mx-auto d-block"
 				alt="Programando"
 			/>
 		</div>
 		<div class="col-sm-12 col-md-8 col-lg-8">
-			<p class="mt-5">
-				Soy Programador web Full Stack con 3 años de experiencia con
-				PHP, Python y JavaScript. En el equipo en donde estoy, colaboro
-				en proyectos web desarrollando nuevas funciones y dando
-				mantenimiento a los mismos. Estoy aplicando e incrementando mis
-				habilidades de programación en lenguajes y herramientas para el
-				desarrollo.
+			<p>
+				Soy Programador web Full Stack con 4 años de experiencia con
+				PHP, Python y JavaScript. En el equipo en donde estoy,
+				colaboro en proyectos web desarrollando nuevas funciones y
+				dando mantenimiento a los mismos. Estoy aplicando e
+				incrementando mis habilidades de programación en lenguajes y
+				herramientas para el desarrollo.
 			</p>
 			<p>
 				Me entusiasma aplicar e incrementar mis habilidades tanto
 				lenguajes como en herramientas y que estas sean de ayuda. Me
-				gusta compartir y retroalimentar en los diferentes proyectos que
-				he colaborado.
+				gusta compartir y retroalimentar en los diferentes proyectos
+				que he colaborado.
 			</p>
 		</div>
 	</div>
-
-	<ContactMe />
 </Layout>
-
-<style>
-	/* Default height for small devices */
-	#intro-hero {
-		height: 400px;
-		background-image: url("/assets/working-on-code.jpg");
-	}
-
-	/* Height for devices larger than 992px */
-	@media (min-width: 992px) {
-		#intro-hero {
-			height: 600px;
-		}
-	}
-
-	.about img {
-		max-height: 500px;
-	}
-</style>
