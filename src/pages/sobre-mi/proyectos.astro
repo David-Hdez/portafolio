@@ -1,0 +1,61 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+// Get all entries from a collection. Requires the name of the collection as an argument.
+const allExperience = await getCollection("experience");
+allExperience.sort((a, b) => b.data.order.valueOf() - a.data.order.valueOf());
+
+const allProjects = await Astro.glob("../proyectos/*.md");
+---
+
+<Layout title="David Pacheco: Habilidades y experiencia">
+	<div class="row mt-5">
+		<div class="col">
+			<ul class="nav nav-pills nav-fill">
+				<li class="nav-item">
+					<a class="nav-link" href="/sobre-mi/habilidades"
+						>Habilidades</a
+					>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/sobre-mi/experiencia"
+						>Experiencia</a
+					>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#"
+						>Proyectos</a
+					>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="row mt-5">
+		<div class="col-12 text-center">
+			<h1>
+				Proyectos personales implementando tecnologías con las que he
+				interactuado
+			</h1>
+		</div>
+	</div>
+	<div class="row mt-2">
+		{
+			allProjects.map((project) => (
+				<div class="col-sm-12 col-md-4 col-lg-4 mt-2">
+					<div class="card text-center">
+						<div class="card-body">
+							<h5 class="card-title">
+								{project.frontmatter.name}
+							</h5>
+							<a href={project.url} class="btn btn-primary">
+								Ver más
+							</a>
+						</div>
+					</div>
+				</div>
+			))
+		}
+	</div>
+</Layout>

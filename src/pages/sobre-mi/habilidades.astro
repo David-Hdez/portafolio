@@ -1,0 +1,99 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import TechStack from "../../components/TechStack.astro";
+import { getCollection } from "astro:content";
+
+// Get all entries from a collection. Requires the name of the collection as an argument.
+const allExperience = await getCollection("experience");
+allExperience.sort((a, b) => b.data.order.valueOf() - a.data.order.valueOf());
+---
+
+<Layout title="David Pacheco: Habilidades y experiencia">
+	<div class="row mt-5">
+		<div class="col">
+			<ul class="nav nav-pills nav-fill">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#"
+						>Habilidades</a
+					>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/sobre-mi/experiencia"
+						>Experiencia</a
+					>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/sobre-mi/proyectos">Proyectos</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="row mt-5">
+		<div class="col-12 text-center">
+			<h1>Habilidades en tecnologías</h1>
+		</div>
+	</div>
+	<div class="row row-cols-1 row-cols-md-3 g-4">
+		<TechStack
+			logo="/assets/tech-stack/hypertext_preprocessor.png"
+			description="PHP"
+			legend="PHP"
+		/>
+		<TechStack
+			logo="/assets/tech-stack/javascript.png"
+			description="JS"
+			legend="JavaScript"
+		/>
+		<TechStack
+			logo="/assets/tech-stack/python.png"
+			description="Python"
+			legend="Python"
+		/>
+		<TechStack
+			logo="/assets/tech-stack/mysql.png"
+			description="MySQL"
+			legend="MySQL"
+		/>
+		<TechStack
+			logo="/assets/tech-stack/4373205_laravel_logo_logos_icon.png"
+			description="Laravel framework"
+			legend="Laravel"
+		/>
+		<TechStack
+			logo="/assets/tech-stack/bootstrap.png"
+			description="Bootstrap"
+			legend="Bootstrap"
+		/>
+		<TechStack
+			logo="/assets/tech-stack/git.png"
+			description="Git"
+			legend="Git"
+		/>
+		<TechStack
+			logo="/assets/tech-stack/nodejs.png"
+			description="Nodejs"
+			legend="Nodejs"
+		/>
+		<TechStack
+			logo="/assets/tech-stack/vue.png"
+			description="Vue"
+			legend="Vue"
+		/>
+		<TechStack
+			logo="/assets/tech-stack/mariadb.png"
+			description="MariaDB"
+			legend="MariaDB"
+		/>
+		<TechStack
+			logo="/assets/tech-stack/docker.png"
+			description="Docker"
+			legend="Docker"
+		/>
+		<TechStack
+			logo="/assets/tech-stack/angular.png"
+			description="Angular"
+			legend="Angular"
+		/>
+	</div>
+</Layout>
