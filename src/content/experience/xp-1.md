@@ -7,4 +7,4 @@ order: 1
 
 Desarrollé un sitio web para la gestión del hardware y software asignado a los empleados, mejorando la organización de bienes informáticos. 
 
-Stack tecnológico: *PHP*, framework CodeIgniter, base de datos en *MySQL* y *JavaScript*.
+Stack tecnológico: *PHP*, base de datos en *MySQL* y *JavaScript*.
