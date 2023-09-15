@@ -35,9 +35,10 @@ const allProjects = await Astro.glob("../proyectos/*.md");
 	<div class="row mt-5">
 		<div class="col-12 text-center">
 			<h1>
-				Proyectos personales implementando tecnologías con las que he
-				interactuado
+				Proyectos personales
 			</h1>
+			<h5>Implementando tecnologías con las que he
+				interactuado</h5>
 		</div>
 	</div>
 	<div class="row mt-2">
@@ -49,7 +50,7 @@ const allProjects = await Astro.glob("../proyectos/*.md");
 							<h5 class="card-title">
 								{project.frontmatter.name}
 							</h5>
-							<a href={project.url} class="btn btn-primary">
+							<a href={project.url} class="btn btn-link">
 								Ver más
 							</a>
 						</div>
