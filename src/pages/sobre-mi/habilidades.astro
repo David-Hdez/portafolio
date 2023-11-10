@@ -1,14 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import TechStack from "../../components/TechStack.astro";
-import { getCollection } from "astro:content";
 
-// Get all entries from a collection. Requires the name of the collection as an argument.
-const allExperience = await getCollection("experience");
-allExperience.sort((a, b) => b.data.order.valueOf() - a.data.order.valueOf());
 ---
 
-<Layout title="David Pacheco: Habilidades y experiencia">
+<Layout title="Habilidades">
 	<div class="row mt-5">
 		<div class="col">
 			<ul class="nav nav-pills nav-fill">
@@ -36,11 +32,6 @@ allExperience.sort((a, b) => b.data.order.valueOf() - a.data.order.valueOf());
 	</div>
 	<div class="row row-cols-1 row-cols-md-3 g-4">
 		<TechStack
-			logo="/assets/tech-stack/hypertext_preprocessor.png"
-			description="PHP"
-			legend="PHP"
-		/>
-		<TechStack
 			logo="/assets/tech-stack/javascript.png"
 			description="JS"
 			legend="JavaScript"
@@ -51,14 +42,29 @@ allExperience.sort((a, b) => b.data.order.valueOf() - a.data.order.valueOf());
 			legend="Python"
 		/>
 		<TechStack
-			logo="/assets/tech-stack/mysql.png"
-			description="MySQL"
-			legend="MySQL"
+			logo="/assets/tech-stack/hypertext_preprocessor.png"
+			description="PHP"
+			legend="PHP"
+		/>
+		<TechStack
+			logo="/assets/tech-stack/angular.png"
+			description="Angular"
+			legend="Angular"
 		/>
 		<TechStack
 			logo="/assets/tech-stack/4373205_laravel_logo_logos_icon.png"
 			description="Laravel framework"
 			legend="Laravel"
+		/>
+		<TechStack
+			logo="/assets/tech-stack/vue.png"
+			description="Vue"
+			legend="Vue"
+		/>
+		<TechStack
+			logo="/assets/tech-stack/mysql.png"
+			description="MySQL"
+			legend="MySQL"
 		/>
 		<TechStack
 			logo="/assets/tech-stack/bootstrap.png"
@@ -76,9 +82,9 @@ allExperience.sort((a, b) => b.data.order.valueOf() - a.data.order.valueOf());
 			legend="Nodejs"
 		/>
 		<TechStack
-			logo="/assets/tech-stack/vue.png"
-			description="Vue"
-			legend="Vue"
+			logo="/assets/tech-stack/typescript.png"
+			description="TypeScript"
+			legend="TypeScript"
 		/>
 		<TechStack
 			logo="/assets/tech-stack/mariadb.png"
@@ -91,9 +97,9 @@ allExperience.sort((a, b) => b.data.order.valueOf() - a.data.order.valueOf());
 			legend="Docker"
 		/>
 		<TechStack
-			logo="/assets/tech-stack/angular.png"
-			description="Angular"
-			legend="Angular"
+			logo="/assets/tech-stack/c-sharp.png"
+			description="C#"
+			legend="C#"
 		/>
 	</div>
 </Layout>
