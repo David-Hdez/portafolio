@@ -6,11 +6,9 @@ import { getCollection } from "astro:content";
 // Get all entries from a collection. Requires the name of the collection as an argument.
 const allExperience = await getCollection("experience");
 allExperience.sort((a, b) => b.data.order.valueOf() - a.data.order.valueOf());
-
-const allProjects = await Astro.glob("../proyectos/*.md");
 ---
 
-<Layout title="David Pacheco: Habilidades y experiencia">
+<Layout title="Habilidades y experiencia">
 	<div class="row mt-5">
 		<div class="col">
 			<ul class="nav nav-pills nav-fill">
