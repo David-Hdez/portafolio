@@ -1,10 +1,8 @@
 ---
-role: Programador web
-lapse: Enero 2019 - Mayo 2019 
-company: Secretaría de Finanzas y Administración del Estado de Puebla
+role: Programador 
+lapse: Mayo 2017 - Agosto 2017 
+company: ANXECH S.A. DE C.V.
 order: 1
 ---
 
-Desarrollé un sitio web para la gestión del hardware y software asignado a los empleados, mejorando la organización de bienes informáticos. 
-
-Stack tecnológico: *PHP*, base de datos en *MySQL* y *JavaScript*.
+Colaboré en el desarrollo de aplicación de escaneo en Java para Android, logrando obtener modelo 3D usando la cámara del dispositivo.
