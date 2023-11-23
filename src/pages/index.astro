@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Writter from "../components/Writter.astro";
+import Habilities from "../components/Habilities.astro";
+import Experience from "../components/Experience.astro";
+import Proyectos from "../components/Proyectos.astro";
 ---
 
 <Layout title="David Pacheco: Programador web full stack">	
@@ -20,13 +23,8 @@ import Writter from "../components/Writter.astro";
 		<div class="col">
 			<a
 				class="btn btn-outline-primary"
-				href="/sobre-mi/habilidades"
-				role="button">Sobre mí</a
-			>
-			<a
-				class="btn btn-outline-primary"
 				href="/contactame"
-				role="button">Contacto</a
+				role="button">Contáctame</a
 			>
 		</div>
 	</div>
@@ -56,4 +54,10 @@ import Writter from "../components/Writter.astro";
 			</p>
 		</div>
 	</div>
+
+	<Habilities />
+
+	<Experience />
+
+	<Proyectos />
 </Layout>

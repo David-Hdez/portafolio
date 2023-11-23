@@ -1,0 +1,31 @@
+---
+const allProjects = await Astro.glob("../pages/proyectos/*.md");
+---
+
+<div class="row mt-5">
+	<div class="col-12 text-center">
+		<h2>
+			Proyectos personales
+		</h2>
+		<h4>Implementando tecnologías con las que he
+			interactuado</h4>
+	</div>
+</div>
+<div class="row mt-2">
+	{
+		allProjects.map((project) => (
+			<div class="col-sm-12 col-md-4 col-lg-4 mt-2">
+				<div class="card text-center">
+					<div class="card-body">
+						<h5 class="card-title">
+							{project.frontmatter.name}
+						</h5>
+						<a href={project.url} class="btn btn-link">
+							Ver más
+						</a>
+					</div>
+				</div>
+			</div>
+		))
+	}
+</div>
